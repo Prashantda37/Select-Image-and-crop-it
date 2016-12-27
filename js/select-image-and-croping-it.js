@@ -18,7 +18,7 @@ $(function(){
             save_state = {},main_conatainer, canvas;
         
         var init = function(){
-            $(wrap).append('<div class="image_container"><canvas id="image_target" width="600" height="500"></canvas></div>');
+            $(wrap).append('<div class="image_container"><canvas id="image_target" width="650" height="450"></canvas></div>');
             //<div class="image_container"><img src="#" id="image_target" /></div>
             $('#image_target').before('<div class="overlay"><div class="inner-overlay"></div></div>');
             $('.overlay').append('<span class="resize-handler resize-nw"></span>')
@@ -155,7 +155,7 @@ $(function(){
                     $(".image_container").show();
                     reader.onload = function(e){
                         img.src = e.target.result;
-                        ctx.drawImage(img, 0, 0, 600, 500);
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
                         //$("#image_target").attr('src', e.target.result);
                     }
                     reader.readAsDataURL(this.files[0]);
